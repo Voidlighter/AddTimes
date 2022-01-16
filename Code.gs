@@ -83,9 +83,20 @@ function SUBTIMES(a,b) {
   }
   return FORMATMINUTES(minutes);
 }
+/**
+ * Gets total minutes from hours and minutes using syntax hh:mm.
+ *
+ * @param {input} input Input hh:mm to get total minutes.
+ * @customfunction
+ */
 function GETMINUTES(input) {
   return parseInt(input.slice(0,input.indexOf(":")))*60 + parseInt(input.slice(input.indexOf(":")+1))
 }
+/**
+ * Gets hours and minutes in syntax hh:mm from an integer representing total minutes.
+ * @param {input} input Input total minutes to get hours and minutes in syntax hh:mm.
+ * @customfunction
+ */
 function FORMATMINUTES(minutes) {
     return (Math.trunc(minutes/60) + ":" + (Math.abs(minutes)%60>=10 ? Math.abs(minutes)%60 : "0" + Math.abs(minutes%60)));
 }
